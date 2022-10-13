@@ -168,6 +168,7 @@ function dpg_scripts() {
 	wp_enqueue_style( 'dpg-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'dpg-style', 'rtl', 'replace' );
 
+	wp_enqueue_style( 'custom2-css', get_template_directory_uri() . '/assets/css/custom2.css', array(), time() );
 	wp_enqueue_style( 'custom.css', get_template_directory_uri() . '/assets/css/custom.css', array(), time() );
 
 	wp_enqueue_script( 'dpg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

@@ -136,7 +136,7 @@ p {
 p:last-child {
     margin-bottom: 0;
 }
-.btn {
+.btn,body input[type="submit"] {
     background-color: #EE8320;
     display: inline-block;
     border-radius: 25px;
@@ -148,10 +148,16 @@ p:last-child {
     font-weight: 700;
     font-family: 'Helvetica Neue';
     border: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
-.btn:hover {
+.btn:hover,body input[type="submit"]:hover {
     background-color: #30409C;
     color: #fff;
+}
+body input:focus-visible,
+body textarea:focus-visible {
+    outline: 0;
 }
 /*Common Css*/
 a {
@@ -230,6 +236,13 @@ ul {
 }
 .pt-70 {
     padding-top: 70px;
+}
+.py-80 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.pb-80 {
+    padding-bottom: 80px;
 }
 /*Site Header*/
 .site-header .header-top {
@@ -774,6 +787,164 @@ ul {
 .faqs-section .section-title {
     margin-bottom: 30px;
 }
+/*Contact Page*/
+.contact-map-section .wrapper {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+.contact-map-section .wrapper .col-6 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.contact-map-section .wrapper .col-6 .content-block {
+    padding-right: 15px;
+}
+.contact-map-section .wrapper .col-6 .map-block {
+    position: relative;
+    padding-top: 68%;
+}
+.contact-map-section .wrapper .col-6 .map-block iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.addresses-section .add-item:nth-child(1),.addresses-section .add-item:nth-child(2) {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.addresses-section .add-item:nth-child(3), .addresses-section .add-item:nth-child(4),.addresses-section .add-item:nth-child(5) {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    border-bottom: 1px solid #F3F3F3;
+}
+.addresses-section .add-item {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid #F3F3F3;
+}
+.addresses-section .add-item .add-block {
+    border-right: 1px solid #F3F3F3;
+    padding: 25px 15px;
+}
+.addresses-section .add-item:nth-child(2) .add-block, .addresses-section .add-item:nth-child(5) .add-block {
+    border-right: 0;
+}
+.addresses-section .add-item .add-block h5 {
+    color: #30409C;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+.addresses-section .add-item .add-block p a {
+    color: #4082C9;
+}
+.addresses-section .add-item .add-block p a:hover,.addresses-section .add-item .add-block p span {
+    color: #EE8320;
+}
+.contact-form-section .form-block {
+    max-width: 618px;
+    margin: 50px auto 0;
+}
+.contact-form-section .form-block .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.contact-form-section .form-block .row .col-6,.contact-form-section .form-block .row .col-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+.contact-form-section .form-block input[type="text"],
+.contact-form-section .form-block input[type="email"],
+.contact-form-section .form-block textarea {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: #333;
+}
+.contact-form-section .form-block input::placeholder,
+.contact-form-section .form-block textarea::placeholder {
+    color: #999999;
+    opacity: 1;
+}
+.contact-form-section .form-block input:-ms-input-placeholder,
+.contact-form-section .form-block textarea:-ms-input-placeholder { 
+    color: #999999;
+}
+.contact-form-section .form-block input::-ms-input-placeholder,
+.contact-form-section .form-block textarea::-ms-input-placeholder {
+    color: #999999;
+}
+.contact-form-section .form-block .row .col-12 {
+    width: 100%;
+}
+.contact-form-section .form-block textarea {
+    height: 146px;
+}
+.contact-form-section .form-block input[type="text"],
+.contact-form-section .form-block input[type="email"] {
+    height: 45px;
+}
+.contact-form-section .form-block input[type="submit"] {
+    max-width: 163px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20px;
+    height: 47px;
+}
+.contact-form-section .form-block .wpcf7-not-valid-tip {
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    margin-top: 5px;
+}
+.contact-form-section .form-block .wpcf7-spinner {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-60%);
+    right: 0;
+}
+.contact-form-section .form-block .submit-block {
+    position: relative;
+}
+.contact-form-section .form-block .wpcf7-response-output {
+    text-align: center;
+    margin: 10px 0 0;
+    font-family: 'Helvetica Neue';
+    font-weight: 400;
+    color: #333;
+    font-size: 16px;
+    line-height: 25px;
+}
+/*Comming Soon Page*/
+.comming-soon .comming-soon-block {
+    color: #fff;
+    padding: 155px 30px 200px;
+    background-size: cover;
+    background-position: center;
+}
+.comming-soon .comming-soon-block h3 {
+    text-transform: uppercase;
+    font-size: 35px;
+    line-height: 42px;
+}
+.comming-soon .comming-soon-block h1 {
+    font-size: 120px;
+    line-height: 146px;
+}
 /*Site Footer*/
 .site-footer {
     background-color: #30409C;
@@ -1034,6 +1205,16 @@ ul {
         padding-top: 15px;
         padding-bottom: 15px;
     }
+    .addresses-section .add-item {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .addresses-section .add-item .add-block {
+        padding: 20px 15px;
+    }
+    .addresses-section .add-item .add-block h5 {
+        margin-bottom: 15px;
+    }
 }
 @media only screen and (max-width: 1199px) {
     .our-clients-section .section-title {
@@ -1117,12 +1298,15 @@ ul {
     .latest-blog-section .blog-item h4 {
         margin: 15px 0;
     }
-    .py-70 {
+    .py-70,.py-80 {
         padding-top: 60px;
         padding-bottom: 60px;
     }
     .pt-70 {
         padding-top: 60px;
+    }
+    .pb-80 {
+        padding-bottom: 60px;
     }
     h6 {
         font-size: 20px;
@@ -1158,6 +1342,21 @@ ul {
     .faqs-section .faqs-wrapper .faq-item .faq-title, .faqs-section .faqs-wrapper .faq-item {
         padding-top: 12px;
         padding-bottom: 12px;
+    }
+    .addresses-section .add-item .add-block h5 {
+        margin-bottom: 10px;
+    }
+    .contact-map-section .wrapper .col-6 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .contact-map-section .wrapper {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .contact-form-section .form-block .wpcf7-response-output {
+        font-size: 15px;
+        line-height: 22px;
     }
 }
 @media (min-width: 1025px) and (max-width:  1199px) {
@@ -1432,6 +1631,49 @@ ul {
     .inner-page-banner-section .banner-image {
         padding-top: 22%;
     }
+    .contact-map-section .wrapper .col-6 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .contact-map-section .wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .contact-map-section .wrapper .col-6 .content-block {
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+    .contact-map-section .wrapper .col-6 .map-block {
+        padding-top: 56.25%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .addresses-section .add-item .add-block h5 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .addresses-section .add-item .add-block p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .addresses-section .add-item:nth-child(1), .addresses-section .add-item:nth-child(2),.addresses-section .add-item:nth-child(3), .addresses-section .add-item:nth-child(4), .addresses-section .add-item:nth-child(5) {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .addresses-section .wrapper {
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .addresses-section .add-item:nth-child(4) .add-block {
+        border-right: 0;
+    }
+    .addresses-section .add-item:nth-child(5) {
+        border-top: 0;
+    }
+    .addresses-section .add-item .add-block {
+        padding: 15px;
+    }
 }
 @media only screen and (max-width: 767px) {
     .our-clients-section .our-clients-wrapper .oc-item {
@@ -1487,12 +1729,15 @@ ul {
     .latest-blog-section .blog-item .blog-image .image {
         border-radius: 10px;
     }
-    .py-70 {
+    .py-70,.py-80 {
         padding-top: 50px;
         padding-bottom: 50px;
     }
     .pt-70 {
         padding-top: 50px;
+    }
+    .pb-80 {
+        padding-bottom: 50px;
     }
     .site-header .header-top {
         padding: 8px 15px;
@@ -1583,6 +1828,31 @@ ul {
         padding-top: 5px;
         padding-bottom: 5px;
     }
+    .addresses-section .add-item:nth-child(1), .addresses-section .add-item:nth-child(2),.addresses-section .add-item:nth-child(3), .addresses-section .add-item:nth-child(4), .addresses-section .add-item:nth-child(5) {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .addresses-section .add-item .add-block {
+        border-right: 0;
+    }
+    .addresses-section .add-item:nth-child(3), .addresses-section .add-item:nth-child(4), .addresses-section .add-item:nth-child(5) {
+        border-bottom: 0;
+    }
+    .addresses-section .add-item:nth-child(5) {
+        border-bottom: 1px solid #F3F3F3;
+    }
+    .addresses-section .add-item .add-block {
+        padding: 0;
+    }
+    .contact-form-section .form-block .wpcf7-response-output {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .contact-form-section .form-block input[type="text"], .contact-form-section .form-block input[type="email"], .contact-form-section .form-block textarea {
+        padding: 10px 15px;
+    }
+    .contact-form-section .form-block input[type="submit"] {margin-top: 10px;}
 }
 @media only screen and (max-width: 575px) {
     .image-text-section .image-text-item:nth-child(even) .text-block,
@@ -1603,12 +1873,15 @@ ul {
     .latest-blog-section .blog-item .blog-image .image {
         border-radius: 10px;
     }
-    .py-70 {
+    .py-70,.py-80 {
         padding-top: 40px;
         padding-bottom: 40px;
     }
     .pt-70 {
         padding-top: 40px;
+    }
+    .pb-80 {
+        padding-bottom: 40px;
     }
     .site-header .social-block {
         display: none;
