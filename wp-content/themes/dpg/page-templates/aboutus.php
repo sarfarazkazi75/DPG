@@ -95,22 +95,22 @@ get_header(); ?>
 		</div>
 		<div class="our-clients-wrapper d-flex justify-content-between">
 			<div class="oc-item">
-				<img src="https://dddemo.net/wordpress/2022/DPG/wp-content/uploads/2022/10/image-5.png" alt="" />
+				<img src="<?php echo site_url(); ?>/wp-content/uploads/2022/10/image-5.png" alt="" />
 			</div>
 			<div class="oc-item">
-				<img src="https://dddemo.net/wordpress/2022/DPG/wp-content/uploads/2022/10/image-6.png" alt="" />
+				<img src="<?php echo site_url(); ?>/wp-content/uploads/2022/10/image-6.png" alt="" />
 			</div>
 			<div class="oc-item">
-				<img src="https://dddemo.net/wordpress/2022/DPG/wp-content/uploads/2022/10/image-4.png" alt="" />
+				<img src="<?php echo site_url(); ?>/wp-content/uploads/2022/10/image-4.png" alt="" />
 			</div>
 			<div class="oc-item">
-				<img src="https://dddemo.net/wordpress/2022/DPG/wp-content/uploads/2022/10/image-7.png" alt="" />
+				<img src="<?php echo site_url(); ?>/wp-content/uploads/2022/10/image-7.png" alt="" />
 			</div>
 			<div class="oc-item">
-				<img src="https://dddemo.net/wordpress/2022/DPG/wp-content/uploads/2022/10/image-2.png" alt="" />
+				<img src="<?php echo site_url(); ?>/wp-content/uploads/2022/10/image-2.png" alt="" />
 			</div>
 			<div class="oc-item">
-				<img src="https://dddemo.net/wordpress/2022/DPG/wp-content/uploads/2022/10/image-1.png" alt="" />
+				<img src="<?php echo site_url(); ?>/wp-content/uploads/2022/10/image-1.png" alt="" />
 			</div>
 		</div>
 	</div>

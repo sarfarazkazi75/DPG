@@ -84,6 +84,9 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
+		<div class="load-more pt-70 text-center">
+			<button type="button" class="btn">Load more</button>
+		</div>
 	</div>
 </section>
 

@@ -26,8 +26,8 @@ get_header(); ?>
 				</div>
 				<div class="faq-content">
 					<div class="content">
-						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, making office relocation more affordable.
-						Rated at 20amp a licenced electrician is required to wire a wall starter or ceiling starter to the building electrical services, once this is installed it’s a simple plug and play system with an electrician required to test and sign off on completion.</p>
+						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, you can also take it with you if you move your business and re-use it.</p>
+						<p>This is good for the environment</p>
 					</div>
 				</div>
 			</div>
@@ -38,8 +38,7 @@ get_header(); ?>
 				</div>
 				<div class="faq-content">
 					<div class="content">
-						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, making office relocation more affordable.
-						Rated at 20amp a licenced electrician is required to wire a wall starter or ceiling starter to the building electrical services, once this is installed it’s a simple plug and play system with an electrician required to test and sign off on completion.</p>
+						<p>No it is not possible to mix the systems</p>
 					</div>
 				</div>
 			</div>
@@ -50,8 +49,7 @@ get_header(); ?>
 				</div>
 				<div class="faq-content">
 					<div class="content">
-						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, making office relocation more affordable.
-						Rated at 20amp a licenced electrician is required to wire a wall starter or ceiling starter to the building electrical services, once this is installed it’s a simple plug and play system with an electrician required to test and sign off on completion.</p>
+						<p>No, any installation must be carried out by a licenced electrician</p>
 					</div>
 				</div>
 			</div>
@@ -62,8 +60,7 @@ get_header(); ?>
 				</div>
 				<div class="faq-content">
 					<div class="content">
-						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, making office relocation more affordable.
-						Rated at 20amp a licenced electrician is required to wire a wall starter or ceiling starter to the building electrical services, once this is installed it’s a simple plug and play system with an electrician required to test and sign off on completion.</p>
+						<p>dpg-formfittings offer a free plan take-off quotation service</p>
 					</div>
 				</div>
 			</div>
@@ -74,8 +71,7 @@ get_header(); ?>
 				</div>
 				<div class="faq-content">
 					<div class="content">
-						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, making office relocation more affordable.
-						Rated at 20amp a licenced electrician is required to wire a wall starter or ceiling starter to the building electrical services, once this is installed it’s a simple plug and play system with an electrician required to test and sign off on completion.</p>
+						<p>A power board is classed as an EPOD and therefore has to comply with AS/NZS3105:2012 Approval and test specification-Electrical portable outlet devices. And can’t be cascaded.</p>
 					</div>
 				</div>
 			</div>
@@ -86,8 +82,7 @@ get_header(); ?>
 				</div>
 				<div class="faq-content">
 					<div class="content">
-						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, making office relocation more affordable.
-						Rated at 20amp a licenced electrician is required to wire a wall starter or ceiling starter to the building electrical services, once this is installed it’s a simple plug and play system with an electrician required to test and sign off on completion.</p>
+						<p>Generally under AS/NZS3000 Electrical Standard it is recommended that 16 is the maximum</p>
 					</div>
 				</div>
 			</div>
@@ -98,8 +93,7 @@ get_header(); ?>
 				</div>
 				<div class="faq-content">
 					<div class="content">
-						<p>This is a dedicated plug and play wiring system which makes re-configuration of power wiring easy to manage and re-usable, making office relocation more affordable.
-						Rated at 20amp a licenced electrician is required to wire a wall starter or ceiling starter to the building electrical services, once this is installed it’s a simple plug and play system with an electrician required to test and sign off on completion.</p>
+						<p>There is a large number of options available to the end user, these include below desk (Power Master), above &amp; below desk (<a href="https://dpg-formfittings.com.au/product/power-master-modules/">Power Master</a>&nbsp;and Power rails), above desk (Power rails such as&nbsp;<a href="https://dpg-formfittings.com.au/product/harmony-module/">Harmony</a>,&nbsp;<a href="https://dpg-formfittings.com.au/product/contour-desktop-power/">Contour</a>&nbsp;or&nbsp;<a href="https://dpg-formfittings.com.au/product/freedom-module/">Freedom</a>), in-desk (<a href="https://dpg-formfittings.com.au/product/omega-ii-new-generation-conference-box/">Omega II&nbsp;</a>and&nbsp;<a href="https://dpg-formfittings.com.au/product/switch-in-desk-powerdataav-module/">Switch</a>) and for screen solutions (Power Master for mid height duct systems and combined with the&nbsp;<a href="https://dpg-formfittings.com.au/product/thick-tile-frame/">thick tile frame&nbsp;</a>when in-screen ).</p>
 					</div>
 				</div>
 			</div>

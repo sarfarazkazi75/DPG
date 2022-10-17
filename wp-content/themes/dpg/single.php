@@ -24,27 +24,69 @@ get_header();
 			</div>
 		</section>
 
-		<?php
-		while ( have_posts() ) :
+		<div class="main-blog-wrap">
 
-			the_post();
+			<div class="container">
+			
+				<div class="row">
 
-			get_template_part( 'template-parts/content', get_post_type() );
+					<div class="col-md-4">
+						<div class="blog-sidebar">
+							<div class="sidebar-title">
+								<span>DPG formatting</span>
+								<h4>DPG formatting News</h4>
+							</div>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'dpg' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'dpg' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+							<div class="sidebar-wrap">
+								<div class="sidebar-wrap-inner">
+									<h4>Categories</h4>
+									<ul>
+										<li><a href="#">Mechanical Characteristics</a></li>
+									</ul>
+								</div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			// if ( comments_open() || get_comments_number() ) :
-			// 	comments_template();
-			// endif;
+								<div class="sidebar-wrap-inner">
+									<h4>Article Tags</h4>
+									<ul>
+										<li><a href="#">Power tower</a></li>
+										<li><a href="#">Underground Utility Locating </a></li>
+										<li><a href="#">Uncategorised </a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="blog-content-wrap">
+							<?php
+							while ( have_posts() ) :
 
-		endwhile; // End of the loop.
-		?>
+								the_post();
+
+								get_template_part( 'template-parts/content', get_post_type() );
+
+								the_post_navigation(
+									array(
+										'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Prev', 'dpg' ),
+										'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next', 'dpg' ),
+									)
+								);
+
+								// If comments are open or we have at least one comment, load up the comment template.
+								// if ( comments_open() || get_comments_number() ) :
+								// 	comments_template();
+								// endif;
+
+							endwhile; // End of the loop.
+							?>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
 
 	</main><!-- #main -->
 

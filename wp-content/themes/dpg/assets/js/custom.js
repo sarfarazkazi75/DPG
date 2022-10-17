@@ -1,6 +1,11 @@
 jQuery( document ).ready(function($) {
+	// Menu Open
 	$(".menu-icon").click(function(){
   		$("body").toggleClass("menu-open");
+	});
+	// Search Open
+	$(".search-button").click(function(){
+  		$(".header-search").toggleClass("active");
 	});
 	// Faqs
 	let title = document.querySelectorAll(".faqs-wrapper .faq-item .faq-title");
@@ -26,5 +31,22 @@ jQuery( document ).ready(function($) {
 	      sibling.style.height = "0px";
 	    }
 	  });
+	});
+	// Products Slider
+	$('.product-main-images').slick({
+		slidesToShow: 1,
+	  	slidesToScroll: 1,
+	  	arrows: false,
+	  	dots: false,
+	  	fade: true,
+	  	swipe: true
+	});
+	$('.product-thumbnails-image').slick({
+	  	slidesToShow: 4,
+	  	slidesToScroll: 1,
+	  	asNavFor: '.product-main-images',
+	  	dots: false,
+	  	centerMode: false,
+	  	focusOnSelect: true
 	});
 });

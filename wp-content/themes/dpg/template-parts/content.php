@@ -57,7 +57,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php dpg_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<!-- <footer class="entry-footer">
+		<//?php dpg_entry_footer(); ?>
+	</footer> -->
 </article><!-- #post-<?php the_ID(); ?> -->
