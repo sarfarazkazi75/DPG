@@ -3,7 +3,7 @@
 $per_page =get_query_var('per_page',2);
 	query_posts( [
 	'posts_per_page' => $per_page,
-] );
+    ]);
 
 ?>
 
