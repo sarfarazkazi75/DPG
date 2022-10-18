@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found py-80 latest-blog-section container text-center">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dpg' ); ?></h1>
 	</header><!-- .page-header -->
