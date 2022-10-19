@@ -103,8 +103,8 @@ function custom_post_type_init() {
 	
 	$args = [
 		"public"             => true,
-		"publicly_queryable" => false,
-		'hierarchical'       => true,
+		"publicly_queryable" => true,
+		'hierarchical'       => false,
 		'labels'             => $labels,
 		'show_ui'            => true,
 		'show_admin_column'  => true,
@@ -113,6 +113,30 @@ function custom_post_type_init() {
 	];
 	register_taxonomy( 'product_cat', [ 'product' ], $args );
 	
+	$tags_labels = [
+		'name'              => _x( 'Product Tag', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Product Tag', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Product Tags', "dpg" ),
+		'all_items'         => __( 'All Product Tags', "dpg" ),
+		'parent_item'       => __( 'Parent Product Tags', "dpg" ),
+		'parent_item_colon' => __( 'Parent Product Tags:', "dpg" ),
+		'edit_item'         => __( 'Edit Product Tags', "dpg" ),
+		'update_item'       => __( 'Update Product Tags', "dpg" ),
+		'add_new_item'      => __( 'Add Product Tag', "dpg" ),
+		'new_item_name'     => __( 'New Category Tag', "dpg" ),
+		'menu_name'         => __( 'Product Tags', "dpg" ),
+	];
+	$tags_args = [
+		"public"             => true,
+		"publicly_queryable" => true,
+		'hierarchical'       => false,
+		'labels'             => $tags_labels,
+		'show_ui'            => true,
+		'show_admin_column'  => true,
+		'query_var'          => true,
+		'rewrite'            => [ 'slug' => 'product_tag' ],
+	];
+	register_taxonomy( 'product_tag', [ 'product' ], $tags_args );
 }
 
 add_action( 'after_setup_theme', 'custom_post_type_init' );

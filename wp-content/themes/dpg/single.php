@@ -8,9 +8,14 @@
  */
 
 get_header();
+global $post;
 $object     = get_queried_object();
-$categories = get_the_category();
-$category   = reset( $categories );
+$categories = get_the_terms($post->ID,'product_cat');
+$category =[];
+if($categories){
+	$category   = reset( $categories );
+}
+$post_tags = get_the_terms($post->ID,'product_tag');
 
 ?>
     
@@ -18,11 +23,20 @@ $category   = reset( $categories );
         
         <section class="inner-page-banner-section">
             <div class="banner-image">
-				<?php dpg_post_thumbnail(); ?>
+                <?php
+                if(get_the_post_thumbnail()){
+	                dpg_post_thumbnail();
+                }
+                else{
+                    ?>
+                    <img src="<?php echo home_url() ?>/wp-content/uploads/2022/10/soft-wiring-banner.jpg" alt="<?php echo get_the_title() ?>">
+	                <?php
+                }
+                ?>
             </div>
             <div class="inner-banner-content text-center d-flex justify-content-center align-items-center">
                 <div class="container">
-                    <h1><?php echo $category->name ?></h1>
+                    <h1><?php echo isset($category->name)?$category->name:get_the_title() ?></h1>
                 </div>
             </div>
         </section>
@@ -61,7 +75,6 @@ $category   = reset( $categories );
 									
 									<?php
 								}
-								$post_tags = get_the_tags();
 								if ( $post_tags ) {
 									?>
                                     <div class="sidebar-wrap-inner">
@@ -70,7 +83,7 @@ $category   = reset( $categories );
 											<?php
 											foreach ( $post_tags as $post_tag ) {
 												?>
-                                                <li><a href="<?php echo get_term_link( $post_tag->term_id ) ?>"><?php echo $post_tag->name ?></a></li>
+                                                <li><a href="<?php echo get_term_link( $post_tag->term_id ) ?>"><?php echo ucwords($post_tag->name) ?></a></li>
 												<?php
 											}
 											?>

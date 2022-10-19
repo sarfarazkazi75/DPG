@@ -10,7 +10,7 @@ $args       = wp_parse_args( $args, $array_defaults );
 ?>
 <section class="<?php echo $args['wrapper_class'] ?>">
     <div class="<?php echo $args['image_class'] ?>">
-        <img src="<?php echo get_field( 'banner_image' ) ? : '#' ?>" alt="banner-<?php echo get_the_title() ?>">
+        <img src="<?php echo get_field( 'banner_image' ) ? : home_url().'/wp-content/uploads/2022/10/soft-wiring-banner.jpg' ?>" alt="banner-<?php echo get_the_title() ?>">
     </div>
     <div class="<?php echo $args['content_class'] ?> text-center d-flex justify-content-center align-items-center">
         <div class="container">
