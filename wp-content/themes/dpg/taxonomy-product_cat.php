@@ -73,10 +73,15 @@ get_header();
             
 			<?php set_query_var('page',$paged); ?>
 			<?php get_template_part( 'template-parts/content', 'product', [ 'term' => $object ] ) ?>
-            
-            <div class="load-more pt-70 text-center">
-                <button type="button" class="btn">Load more</button>
+            <?php
+            /*
+            ?>
+            <div class="load-more pt-70 text-center" id="load-more">
+                <button type="button" class="btn" id="load_more_btn">Load more</button>
             </div>
+            <?php
+            */
+            ?>
         </div>
     </section>
 <?php

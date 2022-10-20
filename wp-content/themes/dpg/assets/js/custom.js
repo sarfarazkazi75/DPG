@@ -59,4 +59,24 @@ jQuery(document).ready(function ($) {
         $('#' + $content_div_id).fadeIn();
 
     });
+    $('#load_more_btn').click(function (){
+        let $search_section = jQuery('#lbs_books_search_wrapper #lbs_books_result');
+        let $form = jQuery('#lbs_books_search_wrapper #lbs_search_form').serialize();
+        let $send_data = {action: 'lbs_fetch_search_result', _wpnonce: lbs_frontend_object.wpnonce, search_data: $form,};
+        jQuery.ajax({
+            type: 'POST',
+            url: lbs_frontend_object.ajaxurl,
+            data: $send_data,
+            beforeSend: function (xhr) {
+                $search_section.block({message: null, overlayCSS: {background: '#fff', opacity: 0.6}});
+            },
+            success: function (response) {
+                $search_section.unblock();
+                $search_section.html($($.parseHTML(response.data.html)).filter("#lbs_books_result").html());
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
 }, jQuery);

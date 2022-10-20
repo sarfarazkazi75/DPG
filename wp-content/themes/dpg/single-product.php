@@ -22,33 +22,49 @@ $category   = reset( $categories );
             <div class="single-product-wrapper d-flex flex-wrap">
                 <div class="product-media-wrapper">
                     <div class="product-main-images">
-                        <?php
-                        $gallery= get_field('_product_image_gallery');
-                        $size = 'full';
-                        ?>
-	                    <?php foreach( $gallery as $image ): ?>
-                            <div class="image-item">
-                                <div class="image-block">
-                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?php
+						$gallery = get_field( '_product_image_gallery' );
+						$size    = 'full';
+						if ( is_string( $gallery ) ) {
+							$gallery_explode = explode( ',', $gallery );
+							if ( $gallery_explode ) {
+								$gallery = [];
+								$i       = 0;
+								foreach ( $gallery_explode as $single_int ) {
+									$gallery[ $i ]['url']                = wp_get_attachment_image_url( $single_int, 'full' );
+									$gallery[ $i ]['sizes']['thumbnail'] = wp_get_attachment_image_url( $single_int );
+									$i ++;
+								}
+							}
+						}
+						
+						?>
+						<?php if ( $gallery ): ?>
+							<?php foreach ( $gallery as $image ): ?>
+                                <div class="image-item">
+                                    <div class="image-block">
+                                        <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>"/>
+                                    </div>
                                 </div>
-                            </div>
-	                    <?php endforeach; ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
                     </div>
                     <div class="product-thumbnails-image">
-                     
-	                    <?php foreach( $gallery as $image ): ?>
-                            <div class="image-item">
-                                <div class="image-block">
-                                    <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?php if ( $gallery ): ?>
+							<?php foreach ( $gallery as $image ): ?>
+                                <div class="image-item">
+                                    <div class="image-block">
+                                        <img src="<?php echo esc_url( $image['sizes']['thumbnail'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>"/>
+                                    </div>
                                 </div>
-                            </div>
-	                    <?php endforeach; ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
                     </div>
                 </div>
                 <div class="product-info-wrapper">
-                    <?php
-                    the_content();
-                    ?>
+					<?php
+					the_content();
+					?>
                 </div>
             </div>
         </div>
@@ -75,22 +91,22 @@ $category   = reset( $categories );
                     <div class="content-block">
                         <div class="tabs-content-item" id="technical" style="display: block">
                             <div class="content">
-                                <?php echo get_field('technical_information')?:__('Details not available...'); ?>
+								<?php echo get_field( 'technical_information' ) ? : __( 'Details not available...' ); ?>
                             </div>
                         </div>
                         <div class="tabs-content-item" id="options">
                             <div class="content">
-	                            <?php echo get_field('options_informations')?:__('Details not available...'); ?>
+								<?php echo get_field( 'options_informations' ) ? : __( 'Details not available...' ); ?>
                             </div>
                         </div>
                         <div class="tabs-content-item" id="code">
                             <div class="content">
-	                            <?php echo get_field('code_informations')?:__('Details not available...'); ?>
+								<?php echo get_field( 'code_informations' ) ? : __( 'Details not available...' ); ?>
                             </div>
                         </div>
                         <div class="tabs-content-item" id="pdf">
                             <div class="content">
-	                            <?php echo get_field('pdf_information')?:__('Details not available...'); ?>
+								<?php echo get_field( 'pdf_information' ) ? : __( 'Details not available...' ); ?>
                             </div>
                         </div>
                     </div>
