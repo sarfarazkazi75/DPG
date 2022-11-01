@@ -59,7 +59,7 @@ function custom_post_type_init() {
 	register_taxonomy( 'faq_cat', [ 'faq' ], $args );
 	
 	
-	$products_post = [
+	$product_post = [
 		"label"               => __( "Products", "dpg" ),
 		"labels"              => [
 			"name"                  => __( "Product", "dpg" ),
@@ -83,9 +83,9 @@ function custom_post_type_init() {
 		"rewrite"             => [ "slug" => "product", "with_front" => true ],
 		"query_var"           => true,
 		"supports"            => [ "title", "editor", "thumbnail", "excerpt" ],
-		'taxonomies'          => [ 'product_cat' ],
+		'taxonomies'          => [ 'product-category' ],
 	];
-	register_post_type( "product", $products_post );
+	register_post_type( "product", $product_post );
 	
 	$labels = [
 		'name'              => _x( 'Product Categories', 'taxonomy general name' ),
@@ -109,9 +109,9 @@ function custom_post_type_init() {
 		'show_ui'            => true,
 		'show_admin_column'  => true,
 		'query_var'          => true,
-		'rewrite'            => [ 'slug' => 'product_cat' ],
+		'rewrite'            => [ 'slug' => 'product-category' ],
 	];
-	register_taxonomy( 'product_cat', [ 'product' ], $args );
+	register_taxonomy( 'product-category', [ 'product' ], $args );
 	
 	$tags_labels = [
 		'name'              => _x( 'Product Tag', 'taxonomy general name' ),
@@ -134,9 +134,9 @@ function custom_post_type_init() {
 		'show_ui'            => true,
 		'show_admin_column'  => true,
 		'query_var'          => true,
-		'rewrite'            => [ 'slug' => 'product_tag' ],
+		'rewrite'            => [ 'slug' => 'product-tag' ],
 	];
-	register_taxonomy( 'product_tag', [ 'product' ], $tags_args );
+	register_taxonomy( 'product-tag', [ 'product' ], $tags_args );
 }
 
 add_action( 'after_setup_theme', 'custom_post_type_init' );

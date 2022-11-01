@@ -10,7 +10,7 @@
 get_header();
 global $post;
 $object     = get_queried_object();
-$categories = get_the_terms($post->ID,'product_cat');
+$categories = get_the_terms($post->ID,'product-category');
 $category =[];
 if($categories){
 	$category   = reset( $categories );

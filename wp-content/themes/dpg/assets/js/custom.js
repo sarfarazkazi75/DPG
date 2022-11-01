@@ -47,7 +47,48 @@ jQuery(document).ready(function ($) {
         asNavFor: '.product-main-images',
         dots: false,
         centerMode: false,
-        focusOnSelect: true
+        focusOnSelect: true,
+        arrows: false
+    });
+
+    //Logo slider
+    $('.our-clients-wrapper').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 5,
+              }
+            },
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 4,
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 3,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 2,
+              }
+            }
+
+          ]
     });
 
     $('.tab-item').click(function () {
@@ -58,25 +99,5 @@ jQuery(document).ready(function ($) {
         $('.tabs-content-item').hide();
         $('#' + $content_div_id).fadeIn();
 
-    });
-    $('#load_more_btn').click(function (){
-        let $search_section = jQuery('#lbs_books_search_wrapper #lbs_books_result');
-        let $form = jQuery('#lbs_books_search_wrapper #lbs_search_form').serialize();
-        let $send_data = {action: 'lbs_fetch_search_result', _wpnonce: lbs_frontend_object.wpnonce, search_data: $form,};
-        jQuery.ajax({
-            type: 'POST',
-            url: lbs_frontend_object.ajaxurl,
-            data: $send_data,
-            beforeSend: function (xhr) {
-                $search_section.block({message: null, overlayCSS: {background: '#fff', opacity: 0.6}});
-            },
-            success: function (response) {
-                $search_section.unblock();
-                $search_section.html($($.parseHTML(response.data.html)).filter("#lbs_books_result").html());
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
     });
 }, jQuery);

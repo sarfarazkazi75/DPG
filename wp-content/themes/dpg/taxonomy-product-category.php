@@ -15,7 +15,7 @@ get_header();
 	$term            = [];
 	$object          = get_queried_object();
 	$args            = [
-		'taxonomy'     => 'product_cat',
+		'taxonomy'     => 'product-category',
 		'orderby'      => 'meta_value_num',
 		'order'        => 'ASC',
 		'hide_empty'   => false,

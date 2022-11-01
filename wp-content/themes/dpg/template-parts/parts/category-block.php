@@ -1,7 +1,7 @@
 <?php
 $array_defaults = [
     'term_id' => get_queried_object_id(),
-	'taxonomy' => 'product_cat',
+	'taxonomy' => 'product-category',
     'term' => get_queried_object(),
 ];
 $term = $args['term'];

@@ -15,7 +15,7 @@ $qry_options = [
 if ( $term ) {
 	$qry_options['tax_query'] = [
 		[
-			'taxonomy' => 'product_cat',
+			'taxonomy' => 'product-category',
 			'terms'    => $term->term_id,
 			'field'    => 'term_id',
 		],
@@ -31,7 +31,7 @@ if ( have_posts() ):
 			<?php while ( have_posts() ) : the_post(); ?>
                 <?php
 				if ( empty( $term ) ) {
-					$terms = wp_get_post_terms( get_the_ID(),'product_cat');
+					$terms = wp_get_post_terms( get_the_ID(),'product-category');
 					if ( $terms ) {
 						$term = reset( $terms );
 					}

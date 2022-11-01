@@ -12,7 +12,7 @@ get_header();
 <?php if ( have_posts() ) : ?>
 	<?php
 	$args = [
-		'taxonomy'     => 'product_cat',
+		'taxonomy'     => 'product-category',
 		'orderby'      => 'meta_value_num',
 		'order'        => 'ASC',
 		'hide_empty'   => false,

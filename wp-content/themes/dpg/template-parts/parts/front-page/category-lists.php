@@ -6,7 +6,7 @@
         <div class="products-wrapper d-flex flex-wrap">
 			<?php
 			$args = [
-				'taxonomy'     => 'product_cat',
+				'taxonomy'     => 'product-category',
 				'orderby'      => 'meta_value_num',
 				'order'        => 'ASC',
 				'hide_empty'   => false,
@@ -23,7 +23,7 @@
 			$terms = get_terms( $args );
 			if ( $terms ) {
 				foreach ( $terms as $term ) {
-					get_template_part( 'template-parts/parts/category', 'block', [ 'term_id' => $term->term_id, 'taxonomy' => 'product_cat', 'term' => $term ] );
+					get_template_part( 'template-parts/parts/category', 'block', [ 'term_id' => $term->term_id, 'taxonomy' => 'product-category', 'term' => $term ] );
 				}
 			}
 			?>
