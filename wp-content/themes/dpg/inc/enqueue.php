@@ -12,6 +12,11 @@ function dpg_scripts() {
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array(), time() );
 	wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/assets/js/custom.js', array(), time() );
 	
+	wp_localize_script('custom-js','siteConfig',array(
+		'ajaxURL'=>admin_url('admin-ajax.php'),
+		'ajax_nonce'=>wp_create_nonce('loadmore_post_nonce'),
+	));
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

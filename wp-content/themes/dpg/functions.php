@@ -47,3 +47,6 @@ require DPG_THEME_URL . 'inc/template-functions.php';
  * Custom template tags for this theme.
  */
 require DPG_THEME_URL . 'inc/template-tags.php';
+
+include_once get_template_directory().'/inc/infinity-load-more.php';
+$GLOBALS['Loadmore_Posts'] = new Loadmore_Posts();

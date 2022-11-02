@@ -15,7 +15,7 @@ $category =[];
 if($categories){
 	$category   = reset( $categories );
 }
-$post_tags = get_the_terms($post->ID,'product_tag');
+$post_tags = get_the_terms($post->ID,'product-tag');
 
 ?>
     

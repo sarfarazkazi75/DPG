@@ -62,6 +62,16 @@ $category   = reset( $categories );
                     </div>
                 </div>
                 <div class="product-info-wrapper">
+                    <?php
+                        if($brochure = get_field( 'pdf_information' )){
+                            ?>
+                            <div class="download-brochure">
+                                <?php echo $brochure?>
+                            </div>
+                            <?php
+                        }
+                    ?>
+                   
 					<?php
 					the_content();
 					?>

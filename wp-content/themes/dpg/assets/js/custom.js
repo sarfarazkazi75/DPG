@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
     // Menu Open
+    jQuery('.download-brochure a,#pdf a').attr("target","_blank");
+
     $(".menu-icon").click(function () {
         $("body").toggleClass("menu-open");
     });
@@ -101,3 +103,86 @@ jQuery(document).ready(function ($) {
 
     });
 }, jQuery);
+jQuery(document).ready(function ($) {
+    class LoadMore {
+        constructor() {
+            this.ajaxUrl = siteConfig?.ajaxURL ?? '';
+            this.ajaxNonce = siteConfig?.ajax_nonce ?? '';
+            this.loadMoreBtn = $('body').find( '#load-more' );
+            this.isRequestProcessing = false;
+
+            this.options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 1.0,
+            };
+
+            this.init();
+        }
+
+        init() {
+            if ( ! this.loadMoreBtn.length ) {
+                return;
+            }
+
+            this.totalPagesCount = $( '#post-pagination' ).data( 'max-pages' );
+
+            this.loadMoreBtn.on('click',()=>this.handleLoadMorePosts());
+/*
+            const observer = new IntersectionObserver(
+                ( entries ) => this.intersectionObserverCallback( entries ),
+                this.options
+            );
+            observer.observe( this.loadMoreBtn[ 0 ] );*/
+        }
+
+        intersectionObserverCallback( entries ) {
+            entries.forEach( ( entry ) => {
+                // If load more button in view.
+                if ( entry?.isIntersecting ) {
+                    this.handleLoadMorePosts();
+                }
+            } );
+        }
+
+        handleLoadMorePosts() {
+            const page = this.loadMoreBtn.data( 'page' );
+            if ( ! page || this.isRequestProcessing ) {
+                return false;
+            }
+            this.loadMoreBtn.html('Loading...');
+            const nextPage = parseInt( page ) + 1;
+            this.isRequestProcessing = true;
+
+            $.ajax( {
+                url: this.ajaxUrl,
+                type: 'post',
+                data: {
+                    page: page,
+                    action: 'load_more',
+                    ajax_nonce: this.ajaxNonce,
+                },
+                success: ( response ) => {
+                    this.loadMoreBtn.data( 'page', nextPage );
+                    $( '#news-posts' ).append( response );
+                    this.removeLoadMoreIfOnLastPage( nextPage );
+                    this.isRequestProcessing = false;
+                    this.loadMoreBtn.html('Load more');
+                },
+                error: ( response ) => {
+                    console.log( response );
+                    this.isRequestProcessing = false;
+                },
+            } );
+        }
+
+        removeLoadMoreIfOnLastPage( nextPage ) {
+            if ( nextPage + 1 > this.totalPagesCount ) {
+                this.loadMoreBtn.remove();
+            }
+        }
+
+    }
+
+    new LoadMore();
+});
