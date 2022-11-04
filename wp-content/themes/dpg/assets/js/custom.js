@@ -1,5 +1,8 @@
 jQuery(document).ready(function ($) {
     // Menu Open
+    jQuery('#order-filter').change(function(){
+        jQuery('#orderby-form')[0].submit();
+    });
     jQuery('.download-brochure a,#pdf a').attr("target","_blank");
 
     $(".menu-icon").click(function () {

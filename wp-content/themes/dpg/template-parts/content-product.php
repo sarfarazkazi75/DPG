@@ -2,14 +2,14 @@
 $term          = isset( $args['term'] ) ? $args['term'] : [];
 $post_per_page = get_option('posts_per_page');
 $paged = get_query_var('page',1);
-$orderby = 'rand';
-
+$orderby = 'title';
+$order = isset($_REQUEST['order'])?$_REQUEST['order']:'ASC';
 $qry_options = [
 	'post_type' => 'product',
 	'posts_per_page' => $post_per_page,
 	'paged' => $paged,
-	'orderby'   => 'rand',
-	'order'     => 'ASC',
+	'orderby'   => $orderby,
+	'order'     => $order,
 ] ;
 
 if ( $term ) {
@@ -20,7 +20,7 @@ if ( $term ) {
 			'field'    => 'term_id',
 		],
 	];
-	$qry_options['orderby'] = 'date';
+	$qry_options['orderby'] = $order;
 }
 query_posts($qry_options );
 if ( have_posts() ):

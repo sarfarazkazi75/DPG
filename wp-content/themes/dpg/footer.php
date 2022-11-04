@@ -23,10 +23,10 @@
                     <div id="block-8">
                         <ul class="d-flex flex-wrap footer-social">
                             <li>
-                                <a href="<?php echo get_field( 'facebook_link', 'option' ) ? : '#' ?>"><i class="fab fa-facebook-f"></i></a>
+                                <a href="<?php echo get_field( 'facebook_link', 'option' ) ? : '#' ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a href="<?php echo get_field( 'instagram_link', 'option' ) ? : '#' ?>"><i class="fab fa-instagram"></i></a>
+                                <a href="<?php echo get_field( 'instagram_link', 'option' ) ? : '#' ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                             </li>
                         </ul>
                     </div>

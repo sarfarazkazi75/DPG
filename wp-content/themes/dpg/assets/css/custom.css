@@ -1467,6 +1467,88 @@ nav.navigation.post-navigation .nav-links a:hover {
     justify-content: center;
 }
 
+.download-brochure {
+    margin-bottom: 20px;
+}
+.download-brochure a {
+    background-color: #EE8320;
+    display: inline-block;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    padding: 14px 31px 15px;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 700;
+    font-family: 'Helvetica Neue';
+    border: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.download-brochure a:hover {
+    background-color: #30409C;
+    color: #fff;
+}
+
+.req-wrap {
+    padding: 30px;
+}
+
+.req-wrap h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.req-wrap p {text-align: center;}
+
+.req-wrap .wpcf7 form {
+    text-align: left;
+}
+
+.req-wrap .wpcf7 form p {
+    text-align: left;
+}
+
+.req-wrap .wpcf7 form label {
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 400;
+    color: #333;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.req-wrap .wpcf7 form br {
+    display: none;
+}
+
+.req-wrap .wpcf7 form input[type="text"] {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: #333;
+}
+
+body .req-wrap .wpcf7 form input[type="submit"] {
+    max-width: 163px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20px;
+    height: 47px;
+}
+
+body .req-wrap .wpcf7 form span.wpcf7-spinner {
+    position: absolute;
+    top: 0;
+}
+
+/*media query*/
 @media only screen and (max-width: 1439px) {
     h2 {
         font-size: 32px;
@@ -2648,6 +2730,19 @@ nav.navigation.post-navigation .nav-links a:hover {
     }
     .site-header.sticky {
         top: -36px;
+    }
+
+    .pum-theme-14685 .pum-container, .pum-theme-enterprise-blue .pum-container {
+        width: calc(100% - 20px) !important;
+        margin: 0 auto !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    .req-wrap {
+        padding: 30px 15px;
+    }
+    .req-wrap h2 {
+        font-size: 24px;
     }
 }
 @media only screen and (max-width: 479px) {

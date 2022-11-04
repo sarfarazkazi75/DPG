@@ -35,7 +35,7 @@ get_header();
 	}
 	$acf_key    = $term->taxonomy . '_' . $term->term_id;
 	$term_image = get_field( 'term_image', $acf_key );
-	$paged      = isset( $_REQUEST['paged'] ) ? $_REQUEST['paged'] : 1;
+	$paged = isset($_REQUEST['paged'])?$_REQUEST['paged']:1;
 	?>
     
     <section class="inner-page-banner-section">
@@ -65,25 +65,23 @@ get_header();
                 </div>
             </div>
             <div class="product-filter d-flex justify-content-end">
-                <form method="get" id="orderby-form">
-                    <select class="filter" name="order" id="order-filter">
-                        <option value="ASC">Alphabate A-Z</option>
-                        <option value="DESC">Alphabate Z-A</option>
-                    </select>
-                </form>
+                <select class="filter" name="filter">
+                    <option value="asc">Alphabate A-Z</option>
+                    <option value="desc">Alphabate Z-A</option>
+                </select>
             </div>
-			
-			<?php set_query_var( 'page', $paged ); ?>
+            
+			<?php set_query_var('page',$paged); ?>
 			<?php get_template_part( 'template-parts/content', 'product', [ 'term' => $object ] ) ?>
-			<?php
-			/*
-			?>
-			<div class="load-more pt-70 text-center" id="load-more">
-				<button type="button" class="btn" id="load_more_btn">Load more</button>
-			</div>
-			<?php
-			*/
-			?>
+            <?php
+            /*
+            ?>
+            <div class="load-more pt-70 text-center" id="load-more">
+                <button type="button" class="btn" id="load_more_btn">Load more</button>
+            </div>
+            <?php
+            */
+            ?>
         </div>
     </section>
 <?php

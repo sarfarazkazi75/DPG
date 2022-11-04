@@ -18,7 +18,7 @@
 							}
 							if ( $service_link = get_sub_field( 'service_link' ,'option') ) {
 								?>
-                                <a href="<?php echo isset( $service_link['url'] ) ? $service_link['url'] : '#' ?>" target="<?php echo isset( $service_link['target'] ) ? $service_link['target'] : '_self' ?>">
+                                <a href="<?php echo isset( $service_link['url'] ) ? $service_link['url'] : '#' ?>" class="popup-open">
                                     <?php echo isset( $service_link['title'] ) ? $service_link['title'] : '' ?>
                                 </a>
 								<?php
