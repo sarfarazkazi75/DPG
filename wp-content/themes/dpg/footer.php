@@ -38,7 +38,7 @@
 							<?php
 							$menu_id = get_field( 'secound_column_menus', 'option' );
 							wp_nav_menu( [
-								'menu_id' => $menu_id,
+								'menu' => $menu_id,
 							] );
 							?>
                         </div>
@@ -54,6 +54,9 @@
                             <li class="d-flex flex-wrap"><span class="icon"><i class="fal fa-phone-alt"></i></span><span class="content"><a
                                         href="tel:<?php echo get_field( 'contact_number', 'option' ) ?>"><?php echo get_field( 'contact_number', 'option' ) ?></a><a
                                         href="tel:<?php echo get_field( 'additional_number', 'option' ) ?>"><?php echo get_field( 'additional_number', 'option' ) ?></a></span></li>
+
+                            <li class="d-flex flex-wrap"><span class="icon"><i class="fal fa-envelope"></i></span><span class="content"><a
+                                        href="mailto:<?php echo get_field( 'third_column_email', 'option' ) ?>"><?php echo get_field( 'third_column_email', 'option' ) ?></a></span></li>
                             
                             <li class="d-flex flex-wrap"><span class="icon"><img src="https://dddemo.net/wordpress/2022/DPG/wp-content/uploads/2022/10/ABN.svg" alt="ABN Icon"></span><span
                                     class="content"><a href="tel:<?php echo get_field( 'third_column_number', 'option' ) ?>"><?php echo get_field( 'third_column_number', 'option' ) ?></a></span></li>

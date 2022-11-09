@@ -73,7 +73,7 @@
                         $menu_id = get_field('header_menu','option');
 						wp_nav_menu(
 							array(
-								'menu_id'        => $menu_id,
+								'menu'        => $menu_id,
 							)
 						);
 						?>

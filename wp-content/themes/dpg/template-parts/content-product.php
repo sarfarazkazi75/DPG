@@ -20,7 +20,7 @@ if ( $term ) {
 			'field'    => 'term_id',
 		],
 	];
-	$qry_options['orderby'] = $order;
+	$qry_options['orderby'] = $orderby;
 }
 query_posts($qry_options );
 if ( have_posts() ):

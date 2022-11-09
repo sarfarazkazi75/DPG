@@ -10,12 +10,12 @@
 get_header();
 global $post;
 $object     = get_queried_object();
-$categories = get_the_terms($post->ID,'product-category');
+$categories = get_the_terms($post->ID,'category');
 $category =[];
 if($categories){
 	$category   = reset( $categories );
 }
-$post_tags = get_the_terms($post->ID,'product-tag');
+$post_tags = get_the_terms($post->ID,'post_tag');
 
 ?>
     
