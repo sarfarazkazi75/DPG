@@ -11,7 +11,7 @@ get_header();
 $object     = get_queried_object();
 $categories = get_the_category();
 $category   = reset( $categories );
-
+$thumbnail_id = get_post_thumbnail_id();
 ?>
     
     <section class="single-product py-80">
@@ -24,15 +24,26 @@ $category   = reset( $categories );
                     <div class="product-main-images">
 						<?php
 						$gallery = get_field( '_product_image_gallery' );
+						if(!is_array($gallery)){
+							$gallery=array();
+                        }
 						$size    = 'full';
+						$thumbnail_gallery[] = array('url'=> wp_get_attachment_image_url( $thumbnail_id, 'full' ),'sizes'=>array('thumbnail'=>wp_get_attachment_image_url( $thumbnail_id )),'alt'=>get_the_title( $thumbnail_id ));
+						$gallery = array_merge($thumbnail_gallery,$gallery);
 						if ( is_string( $gallery ) ) {
 							$gallery_explode = explode( ',', $gallery );
 							if ( $gallery_explode ) {
 								$gallery = [];
-								$i       = 0;
+								if($thumbnail_id){
+								    $gallery[0]['url']                = wp_get_attachment_image_url( $thumbnail_id, 'full' );
+								    $gallery[0]['sizes']['thumbnail'] = wp_get_attachment_image_url( $thumbnail_id );
+								    $gallery[0]['alt']= get_the_title( $thumbnail_id );
+                                }
+								$i       = 1;
 								foreach ( $gallery_explode as $single_int ) {
 									$gallery[ $i ]['url']                = wp_get_attachment_image_url( $single_int, 'full' );
 									$gallery[ $i ]['sizes']['thumbnail'] = wp_get_attachment_image_url( $single_int );
+									$gallery[$i]['alt']= get_the_title( $thumbnail_id );
 									$i ++;
 								}
 							}

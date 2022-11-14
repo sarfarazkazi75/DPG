@@ -95,8 +95,8 @@
 		</div>
 		<div class="header-search">
 			<div class="container">
-				<form method="post">
-					<input type="search" name="search" placeholder="Search" autocomplete="off">
+				<form method="get" action="<?php echo home_url() ?>">
+					<input type="search" name="s" placeholder="Search" autocomplete="off" value="<?php echo isset($_REQUEST['s'])?$_REQUEST['s']:'' ?>">
 					<button type="submit"><i class="fal fa-search"></i></button>
 				</form>
 			</div>

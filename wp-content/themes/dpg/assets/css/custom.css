@@ -501,7 +501,7 @@ a:-webkit-any-link:focus-visible {
 }
 .hero-section .hero-content .btn {
     margin-top: 20px;
-    max-width: 169px;
+    max-width: 230px;
     width: 100%;
 }
 .hero-section .hero-content .btn:hover {
@@ -524,6 +524,7 @@ a:-webkit-any-link:focus-visible {
 .our-features .feature-item .content-block a {color: #EE8320;}
 .our-features .feature-item .content-block h5 {
     margin-bottom: 12px;
+    color: #333333;
 }
 .our-clients-section .our-clients-wrapper {
     margin-left: -15px;
@@ -703,6 +704,13 @@ a:-webkit-any-link:focus-visible {
 }
 .products-wrapper .product-item .product-block:hover .image-block .image img {
     transform: scale(1.1);
+}
+.hover-block-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 /*About Page*/
 .inner-page-banner-section .banner-image {
@@ -943,7 +951,7 @@ a:-webkit-any-link:focus-visible {
     margin-left: -10px;
     margin-right: -10px;
 }
-.contact-form-section .form-block .row .col-6,.contact-form-section .form-block .row .col-12 {
+.contact-form-section .form-block .row .col-4, .contact-form-section .form-block .row .col-6,.contact-form-section .form-block .row .col-12 {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 20px;
@@ -1033,6 +1041,20 @@ a:-webkit-any-link:focus-visible {
 .error-404 .not-found-block h1 {
     font-size: 120px;
     line-height: 146px;
+}
+.contact-form-section .form-block .row .col-4 {
+    width: 33.33%;
+}
+.contact-form-section .form-block input[type="date"] {
+    color: #666;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    padding: 3px 20px;
+    width: 100%;
+    height: 45px;
+}
+.contact-form-section .form-block .row .col-12.mb-2 {
+    margin-bottom: 5px;
 }
 /*Single Page*/
 .single-product .single-product-wrapper .product-media-wrapper {
@@ -1179,13 +1201,14 @@ a:-webkit-any-link:focus-visible {
     background: #30409C;
     padding: 16px;
     color: #fff;
+    display: none;
 }
 .sidebar-title span {font-weight: 400;}
 .main-blog-wrap {
     padding: 70px 0;
 }
 .sidebar-wrap {
-    padding: 30px 0;
+    padding: 0 0 30px 0;
 }
 .sidebar-wrap-inner {
     margin-bottom: 30px;
@@ -1439,13 +1462,16 @@ nav.navigation.post-navigation .nav-links a:hover {
 .site-footer .footer-col .footer-contact-info li .icon i {
     transform: translateY(4px);
 }
-.site-footer .footer-col.footer-col-2 .menu li a {
+.site-footer .footer-col.footer-col-2 .menu li a, .site-footer ul#menu-footer-menu-1 li a {
     color: #C4CCF9;
     font-size: 18px;
     line-height: 35px;
 }
-.site-footer .footer-col.footer-col-2 .menu li a:hover {
+.site-footer .footer-col.footer-col-2 .menu li a:hover, .site-footer ul#menu-footer-menu-1 li a:hover {
     color: #fff;
+}
+.site-footer div#nav_menu-1 {
+    padding-top: 30px;
 }
 .site-footer .footer-bottom .wrapper {
     border-top: 1px solid rgb(196, 204, 249, 0.1);
@@ -1532,7 +1558,6 @@ nav.navigation.post-navigation .nav-links a:hover {
     padding: 10px 20px;
     color: #333;
 }
-
 body .req-wrap .wpcf7 form input[type="submit"] {
     max-width: 163px;
     width: 100%;
@@ -1542,11 +1567,119 @@ body .req-wrap .wpcf7 form input[type="submit"] {
     margin-top: 20px;
     height: 47px;
 }
-
 body .req-wrap .wpcf7 form span.wpcf7-spinner {
     position: absolute;
     top: 0;
 }
+.req-wrap .wpcf7 form .mb-3 {
+    margin-bottom: 15px;
+}
+.page-template-privacy-policy h2, .page-template-privacy-policy h3 {
+    margin-bottom: 10px;
+}
+.latest-blog-section .blog-item .blog-image .image img {
+    max-height: 460px;
+    width: 100%;
+    object-fit: cover;
+}
+a.remove-div {
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    cursor: pointer;
+    color: red;
+}
+
+.product-specifics-fields-new.row {
+    position: relative;
+}
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+/*seach css*/
+.searchresults-main {
+    padding: 80px 0;
+}
+.search-left {
+    width: 70%;
+}
+.search-right {
+    width: 30%;
+}
+.search-left, .search-right {
+    padding: 0 18px;
+}
+.searchresults-main header.page-header {
+    margin-bottom: 40px;
+}
+
+.searchresults-main article {
+    margin-bottom: 30px;
+}
+.searchresults-main article a.post-thumbnail {
+    display: none;
+}
+.searchresults-main article h2.entry-title {
+    margin-bottom: 10px;
+}
+.searchresults-main article .entry-summary {
+    margin-top: 0;
+}
+.searchresults-main article .entry-meta {
+    margin-bottom: 15px;
+}
+
+/* .searchresults-main aside#secondary {
+    padding-left: 20px;
+} */
+.searchresults-main article footer.entry-footer {
+    display: none;
+}
+
+.searchresults-main aside#secondary .wp-block-search__label {
+    display: none;
+}
+.searchresults-main .wp-block-search__inside-wrapper input[type="search"] {
+    height: 42px;
+    padding: 10px;
+}
+.searchresults-main .wp-block-search__inside-wrapper button.wp-block-search__button.wp-element-button {
+    background-color: #EE8320;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 700;
+    font-family: 'Helvetica Neue';
+    border: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.searchresults-main .wp-block-search__inside-wrapper button.wp-block-search__button.wp-element-button:hover {
+    background-color: #30409C;
+}
+
+.searchresults-main .widget h2 {
+    margin-bottom: 15px;
+}
+
+.searchresults-main .wp-block-categories li a {
+    color: #676767;
+}
+.searchresults-main .wp-block-categories li {
+    margin-bottom: 5px;
+    list-style: disc;
+}
+.searchresults-main .wp-block-categories-list.wp-block-categories {
+    margin-left: 20px;
+}
+
 
 /*media query*/
 @media only screen and (max-width: 1439px) {
@@ -1640,7 +1773,7 @@ body .req-wrap .wpcf7 form span.wpcf7-spinner {
         width: 22px;
         height: auto;
     }
-    .site-footer .footer-bottom .wrapper .footer-copyright p, .site-footer .footer-col.footer-col-2 .menu li a,.site-footer .footer-col .footer-contact-info li .content, .site-footer .footer-col .footer-contact-info li .content a {
+    .site-footer .footer-bottom .wrapper .footer-copyright p, .site-footer .footer-col.footer-col-2 .menu li a,.site-footer .footer-col .footer-contact-info li .content, .site-footer .footer-col .footer-contact-info li .content a, .site-footer ul#menu-footer-menu-1 li a {
         font-size: 16px;
         line-height: 32px;
     }
@@ -2177,6 +2310,10 @@ body .req-wrap .wpcf7 form span.wpcf7-spinner {
         transform: translate(-50%, -50%);
         left: 50%;
     }
+    .searchresults-main article h2.entry-title, .searchresults-main .widget h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
 }
 @media only screen and (max-width: 991px) {
     h2 {
@@ -2258,7 +2395,7 @@ body .req-wrap .wpcf7 form span.wpcf7-spinner {
     .site-footer .footer-col.footer-col-1 .wp-block-image img {
         max-width: 160px;
     }
-    .site-footer .footer-bottom .wrapper .footer-copyright p, .site-footer .footer-col.footer-col-2 .menu li a, .site-footer .footer-col .footer-contact-info li .content, .site-footer .footer-col .footer-contact-info li .content a,.site-footer .footer-bottom .wrapper .footer-credit p {
+    .site-footer .footer-bottom .wrapper .footer-copyright p, .site-footer .footer-col.footer-col-2 .menu li a, .site-footer .footer-col .footer-contact-info li .content, .site-footer .footer-col .footer-contact-info li .content a,.site-footer .footer-bottom .wrapper .footer-credit p, .site-footer ul#menu-footer-menu-1 li a {
         font-size: 14px;
         line-height: 24px;
     }
@@ -2394,6 +2531,27 @@ body .req-wrap .wpcf7 form span.wpcf7-spinner {
     .products-list-wrap-inner {
         padding: 10px 0 60px;
     }
+    .main-blog-wrap .row .col-md-4, .main-blog-wrap .row .col-md-8 {
+        width: 100%;
+    }
+    nav.navigation.post-navigation {
+        max-width: 100%;
+    }
+    nav.navigation.post-navigation .nav-links a {
+        margin: 0 auto;
+    }
+
+    .searchresults-main .row {
+        flex-direction: column;
+    }
+    .search-left, .search-right{
+        width: 100%;
+    }
+    .searchresults-main article h2.entry-title {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
 }
 @media (min-width: 768px) and (max-width: 991px) {
     .addresses-section .add-item .add-block h5 {
@@ -2643,6 +2801,12 @@ body .req-wrap .wpcf7 form span.wpcf7-spinner {
     }
     .products-list-wrap-inner {
         padding: 10px 0 50px;
+    }
+    .searchresults-main {
+        padding: 50px 0;
+    }
+    .site-footer div#nav_menu-1{
+        padding-top: 15px;
     }
 }
 @media only screen and (max-width: 575px) {

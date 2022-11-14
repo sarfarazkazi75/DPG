@@ -29,6 +29,17 @@
                                 <a href="<?php echo get_field( 'instagram_link', 'option' ) ? : '#' ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                             </li>
                         </ul>
+                       
+                    </div>
+                    <div id="nav_menu-1">
+                        <div class="menu-quick-links-container">
+			                <?php
+			                $menu_id = get_field( 'first_column_menu', 'option' );
+			                wp_nav_menu( [
+				                'menu' => $menu_id,
+			                ] );
+			                ?>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-col footer-col-2">

@@ -48,5 +48,14 @@ require DPG_THEME_URL . 'inc/template-functions.php';
  */
 require DPG_THEME_URL . 'inc/template-tags.php';
 
+
+function wpcf7_do_something ($WPCF7_ContactForm) {
+
+//	dd($WPCF7_ContactForm);
+	
+}
+
+//add_action("wpcf7_posted_data", "wpcf7_do_something");
+
 include_once get_template_directory().'/inc/infinity-load-more.php';
 $GLOBALS['Loadmore_Posts'] = new Loadmore_Posts();

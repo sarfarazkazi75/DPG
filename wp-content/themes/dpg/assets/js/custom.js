@@ -1,4 +1,38 @@
+function generateDynamicField(){
+    $index= 1;
+    jQuery('input[name^="item"]').each(function (){
+        jQuery(this).attr("name",'item['+($index++)+']');
+    });
+    $index= 1;
+    jQuery('input[name^="colour"]').each(function (){
+        jQuery(this).attr("name",'colour['+($index++)+']');
+    });
+    $index= 1;
+    jQuery('input[name^="qty"]').each(function (){
+        jQuery(this).attr("name",'qty['+($index++)+']');
+    });
+
+}
 jQuery(document).ready(function ($) {
+    generateDynamicField();
+    jQuery('#add-multiple-products').click(function (){
+        $this = jQuery(this);
+        $parent = $this.parents('#product-specifics');
+        $products_div = $parent.find('.product-specifics-fields');
+        $products_div.find("input")
+            .clone()
+            .val("")
+            .wrap('<div class="col-4"></div>');
+        $parent.append('<div class="product-specifics-fields-new row">'+$products_div.html()+'<a class="remove-div">X</a></div>');
+        generateDynamicField();
+        return false;
+    });
+
+    jQuery('body').on('click','.remove-div',function (){
+        jQuery(this).parent().remove();
+        generateDynamicField();
+    });
+
     // Menu Open
     jQuery('#order-filter').change(function(){
         jQuery('#orderby-form')[0].submit();

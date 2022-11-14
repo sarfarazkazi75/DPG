@@ -10,12 +10,12 @@
 get_header();
 global $post;
 $object     = get_queried_object();
-$categories = get_the_terms($post->ID,'category');
-$category =[];
-if($categories){
-	$category   = reset( $categories );
+$categories = get_the_terms( $post->ID, 'category' );
+$category   = [];
+if ( $categories ) {
+	$category = reset( $categories );
 }
-$post_tags = get_the_terms($post->ID,'post_tag');
+$post_tags = get_the_terms( $post->ID, 'post_tag' );
 
 ?>
     
@@ -23,20 +23,19 @@ $post_tags = get_the_terms($post->ID,'post_tag');
         
         <section class="inner-page-banner-section">
             <div class="banner-image">
-                <?php
-                if(get_the_post_thumbnail()){
-	                dpg_post_thumbnail();
-                }
-                else{
-                    ?>
+				<?php
+				if ( get_the_post_thumbnail() ) {
+					dpg_post_thumbnail();
+				} else {
+					?>
                     <img src="<?php echo home_url() ?>/wp-content/uploads/2022/10/soft-wiring-banner.jpg" alt="<?php echo get_the_title() ?>">
-	                <?php
-                }
-                ?>
+					<?php
+				}
+				?>
             </div>
             <div class="inner-banner-content text-center d-flex justify-content-center align-items-center">
                 <div class="container">
-                    <h1><?php echo isset($category->name)?$category->name:get_the_title() ?></h1>
+                    <h1><?php echo isset( $category->name ) ? $category->name : get_the_title() ?></h1>
                 </div>
             </div>
         </section>
@@ -50,10 +49,18 @@ $post_tags = get_the_terms($post->ID,'post_tag');
                     <div class="col-md-4">
                         <div class="blog-sidebar">
                             <div class="sidebar-title">
-                                <span>DPG formatting</span>
-                                <h4>DPG formatting News</h4>
+								<?php
+								$left_side_value = get_field( 'left_side_value', get_the_ID() );
+								if ( ! empty( $left_side_value ) ) {
+									echo $left_side_value;
+								} else {
+									?>
+                                    <span>DPG formatting</span>
+                                    <h4>DPG formatting News</h4>
+									<?php
+								}
+								?>
                             </div>
-                            
                             <div class="sidebar-wrap">
 								<?php
 								
@@ -83,7 +90,7 @@ $post_tags = get_the_terms($post->ID,'post_tag');
 											<?php
 											foreach ( $post_tags as $post_tag ) {
 												?>
-                                                <li><a href="<?php echo get_term_link( $post_tag->term_id ) ?>"><?php echo ucwords($post_tag->name) ?></a></li>
+                                                <li><a href="<?php echo get_term_link( $post_tag->term_id ) ?>"><?php echo ucwords( $post_tag->name ) ?></a></li>
 												<?php
 											}
 											?>
