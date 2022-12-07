@@ -17,9 +17,10 @@ $term       = $args['term'];
     <div class="product-block">
         <div class="image-block">
             <div class="image">
-                <img src="<?php echo ! empty( $term_image ) ? $term_image : '#' ?>" alt="<?php echo $term->term_name ?>">
+                <a href="<?php echo get_term_link( $term ) ?>"><img src="<?php echo ! empty( $term_image ) ? $term_image : '#' ?>" alt="<?php echo $term->term_name ?>"></a>
             </div>
             <div class="hover-block d-flex flex-wrap justify-content-center align-items-center align-content-center">
+                <a href="<?php echo get_term_link( $term ) ?>" class="hover-block-link"></a>
                 <h6>
 					<?php echo $term->name ?>
 					<?php

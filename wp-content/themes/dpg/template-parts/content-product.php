@@ -41,9 +41,10 @@ if ( have_posts() ):
                     <div class="product-block">
                         <div class="image-block">
                             <div class="image">
-                                <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php echo get_the_title() ?>">
+								<a href="<?php echo get_the_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php echo get_the_title() ?>"></a>
                             </div>
                             <div class="hover-block d-flex flex-wrap justify-content-center align-items-center align-content-center">
+								<a href="<?php echo get_the_permalink() ?>" class="hover-block-link"></a>
                                 <h6><?php echo $term->name ?></h6>
                                 <p><?php the_excerpt(); ?> </p>
                             </div>
