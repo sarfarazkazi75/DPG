@@ -70,8 +70,8 @@ get_header();
                     $order = isset($_REQUEST['order'])?$_REQUEST['order']:'ASC';
                     ?>
                     <select class="filter" name="order" id="order-filter">
-                        <option <?php echo $order=='ASC'?'selected':'' ?> value="ASC">Alphabate A-Z</option>
-                        <option <?php echo $order=='DESC'?'selected':'' ?> value="DESC">Alphabate Z-A</option>
+                        <option <?php echo $order=='ASC'?'selected':'' ?> value="ASC">Alphabet A-Z</option>
+                        <option <?php echo $order=='DESC'?'selected':'' ?> value="DESC">Alphabet Z-A</option>
                     </select>
                 </form>
             </div>
